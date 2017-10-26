@@ -8,3 +8,8 @@ body {
     @include montserrat;
     font-size: $font-size;
 }
+
+.wrapper {
+    max-width: $site-width;
+    margin: 0 auto;
+}
