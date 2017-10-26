@@ -1,0 +1,10 @@
+/* Globals */
+html {
+    font-size: 10 / 16 * 100%;
+}
+
+body {
+    background: $bg;
+    @include montserrat;
+    font-size: $font-size;
+}

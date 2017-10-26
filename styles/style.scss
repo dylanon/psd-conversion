@@ -1,4 +1,4 @@
-/* Variables */
+// Variables
 
 $bg: #ffffff;
 $counter-bg: #2f2f2f;
@@ -15,4 +15,7 @@ $font-color-footer: #636363;
 $font-color-copyright: #3a3a3a;
 $font-color-social: #909090;
 
+@import "partials/setup";
+@import "partials/mixins";
 @import "partials/globals";
+@import "partials/header";
