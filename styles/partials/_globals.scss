@@ -9,6 +9,11 @@ body {
     font-size: $font-size;
 }
 
+// Remove default padding
+ul {
+    padding: 0;
+}
+
 .wrapper {
     max-width: $site-width;
     margin: 0 auto;
