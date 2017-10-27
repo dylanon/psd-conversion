@@ -8,6 +8,7 @@ $call-to-action-bg: #323232;
 
 $accent-color: #eeb013;
 $contrast-color: #141414;
+$border-color: #d8d8d8;
 
 $font-size: 1.4rem;
 $font-color: #6f6f6f;
@@ -17,6 +18,9 @@ $nav-item-padding: 60px;
 
 // Header
 $slider-control-indent: 60px;
+
+// Intro Page
+$intro-icon-size: 2.8rem;
 
 // Footer
 $font-color-footer: #636363;
@@ -28,3 +32,4 @@ $footer-bg: #202020;
 @import "partials/mixins";
 @import "partials/globals";
 @import "partials/header";
+@import "partials/intro-section";

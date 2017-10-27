@@ -1,0 +1,46 @@
+/* Intro Section */
+
+.intro-section {
+
+    .logo-sideways {
+        margin: 0 128px;
+    }
+
+    .subheading {
+        margin-top: 0;
+    }
+
+    .circled-icon {
+        font-size: $intro-icon-size;
+        height: 6.9rem / 2.8rem * 1em; // Scale circle height if icon size changes
+        width: 6.9rem / 2.8rem * 1em; // Scale circle width if icon size changes
+        border: 2px solid $border-color;
+        border-radius: 50%;
+        display: flex; // parent
+    }
+
+    .features {
+        color: $contrast-color;
+        text-transform: uppercase;
+        
+        display: flex; // parent
+        justify-content: space-between;
+
+        .fa {
+            margin: auto;
+        }
+
+        li {
+            flex: 1 0 auto; // child
+
+            display: flex; // parent
+            align-items: center;
+        }
+
+        li p {
+            margin: 0 auto;
+        }
+
+    }
+
+}
