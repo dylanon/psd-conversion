@@ -2,4 +2,53 @@
 header.page-header {
     background: url(../assets/northern-lights.jpg) center/cover no-repeat;
     height: 100vh;
+    color: #ffffff;
+    
+    a {
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    
+    nav { // Flex parent
+        display: flex;
+        // border: 1px solid white;
+        justify-content: space-between;
+        align-items: center;
+        
+        .fa {
+            font-size: 1.2rem;
+        }
+    }
+
+    // Could be used to bump nav links up like in PSD
+    // .navs {
+    //     position: relative;
+    //     top: -10px;
+    // }
+    
+    ul {
+        list-style: none;
+        display: inline;
+        // border: 1px solid tomato;
+    }
+
+    li {
+        display: inline;
+        padding-left: 60px;
+    }
+
+    .main-nav .fa {
+        padding-left: 1.9rem;
+    }
+
+    .secondary-nav li {
+        padding-left: 75px;
+
+        &:last-child {
+            padding-left: 30px;
+        }
+    }
+
 }
