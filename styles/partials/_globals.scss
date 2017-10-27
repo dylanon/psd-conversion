@@ -5,6 +5,7 @@ html {
 
 body {
     background: $bg;
+    color: $font-color;
     @include montserrat;
     font-size: $font-size;
 }
@@ -22,10 +23,12 @@ h3 {
 
 h2 {
     font-size: 1.8rem;
+    letter-spacing: 0.3rem;
 }
 
 h3 {
     font-size: 2.4rem;
+    letter-spacing: 0.4rem;
 }
 
 img {
@@ -58,6 +61,38 @@ ul {
 
 .home-section {
     padding-top: 120px;
+
+    > header {
+        text-align: center;
+
+        h2,
+        .subheading {
+            margin: 0;
+        }
+    }
+}
+
+.insignia {
+    margin: 25px auto 14px auto;
+    position: relative;
+    width: 22.5rem;
+
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 8rem;
+        background: $border-color;
+        position: absolute;
+        top: 50%;
+    }
+    &::before {
+        left: 0;
+    }
+    &::after {
+        right: 0;
+    }
 }
 
 .subheading {
