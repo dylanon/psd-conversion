@@ -9,6 +9,10 @@ body {
     font-size: $font-size;
 }
 
+a {
+    text-decoration: none;
+}
+
 h2,
 h3 {
     font-weight: 700;
@@ -36,6 +40,15 @@ p {
 ul {
     padding: 0;
     list-style: none;
+}
+
+.button {
+    display: inline-block;
+    color: $contrast-color;
+    letter-spacing: 0.52rem;
+    text-transform: uppercase;
+    border: 1px solid $contrast-color;
+    padding: 2.6rem 3.2rem;
 }
 
 // Apply to an element to make it a flex parent
