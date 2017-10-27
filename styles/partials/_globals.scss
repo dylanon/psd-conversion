@@ -51,7 +51,8 @@ ul {
     letter-spacing: 0.52rem;
     text-transform: uppercase;
     border: 1px solid $contrast-color;
-    padding: 2.6rem 3.2rem;
+    // Convert padding to ems so it depends on button font size
+    padding: (2.1rem / $font-size * 1em) (3.2rem / $font-size * 1em);
 }
 
 // Apply to an element to make it a flex parent
