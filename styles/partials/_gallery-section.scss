@@ -1,0 +1,36 @@
+/* Gallery */
+
+.gallery-filter {
+
+    margin: 40px;
+
+    ul {
+        display: flex; // parent
+        justify-content: center;
+    }
+
+    li {
+        @extend .button;
+        font-size: 1rem;
+        margin: 0 10px;
+
+        // Remove extra letter spacing for a single character item
+        &:last-child {
+            letter-spacing: 0;
+        }
+    }
+
+}
+
+.gallery {
+    display: flex; // parent
+    flex-flow: row wrap;
+
+    li {
+        flex: 1 0 25%;
+    }
+
+    img {
+        display: block;
+    }
+}
