@@ -3,19 +3,23 @@ header.page-header {
     background: url(../assets/northern-lights.jpg) center/cover no-repeat;
     height: 100vh;
     color: #ffffff;
+    padding-top: 50px;
+    position: relative;
     
     a {
         color: #ffffff;
         text-decoration: none;
-        text-transform: uppercase;
     }
-
     
     nav { // Flex parent
         display: flex;
         // border: 1px solid white;
         justify-content: space-between;
         align-items: center;
+
+        a {
+            text-transform: uppercase;
+        }
         
         .fa {
             font-size: 1.2rem;
@@ -36,7 +40,7 @@ header.page-header {
 
     li {
         display: inline;
-        padding-left: 60px;
+        padding-left: $nav-item-padding;
     }
 
     .main-nav .fa {
@@ -47,8 +51,54 @@ header.page-header {
         padding-left: 75px;
 
         &:last-child {
-            padding-left: 30px;
+            padding-left: $nav-item-padding / 2;
         }
+    }
+
+    .wrapper {
+        height: 100vh;
+    }
+
+    .slider-content {
+        position: absolute;
+        text-align: center;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    .slider-title {
+        font-size: 14rem;
+        font-weight: 700;
+        margin: 0;
+        line-height: 0.9;
+
+        span {
+            font-size: 9rem;
+        }
+    }
+
+    .slider-tagline,
+    .circle-button {
+        @include crimson;
+        font-size: 1.8rem;
+        font-style: italic;
+    }
+
+    .slider-control {
+        position: absolute;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        padding: 1.55rem 1.95rem;
+    }
+
+    .slider-control-left {
+        top: 50%;
+        left: $slider-control-indent;
+    }
+
+    .slider-control-right {
+        top: 50%;
+        right: $slider-control-indent;
     }
 
 }
