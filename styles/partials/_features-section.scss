@@ -1,5 +1,42 @@
 /* Features Section */
 
+.features-intro {
+    display: flex; // parent
+    justify-content: space-between;
+
+    .features-intro-text {
+        width: 55%;
+    }
+}
+
+.person-details {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $contrast-color;
+    margin-top: 3.5rem;
+
+    &::before {
+        content: "";
+        display: block;
+        height: 1px;
+        background: $contrast-color;
+        width: 6.1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.person-name {
+    letter-spacing: 0.1rem;
+}
+
+.person-title {
+    @include crimson;
+    font-style: italic;
+    font-size: 1.1rem;
+    letter-spacing: 0.05rem;
+}
+
 .features {
     display: flex; // parent
     flex-flow: row wrap;
