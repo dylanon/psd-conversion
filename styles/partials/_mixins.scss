@@ -6,3 +6,11 @@
 @mixin crimson {
     font-family: 'Crimson Text', serif;
 }
+
+@mixin pseudo-line($lineColor: #141414, $lineHeight: 1px, $lineWidth: 100px) {
+    content: "";
+    display: block;
+    background: $lineColor;
+    height: $lineHeight;
+    width: $lineWidth;
+}
