@@ -41,6 +41,15 @@ p {
     line-height: (30 / 14); // PSD shows line height of approx 30px
 }
 
+blockquote {
+    @include crimson;
+    font: {
+        size: 1.8rem;
+        style: italic;
+    }
+    margin: 3.5rem 0;
+}
+
 // Remove default list styles
 ul {
     padding: 0;

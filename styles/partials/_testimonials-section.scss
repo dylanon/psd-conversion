@@ -1,0 +1,62 @@
+/* Testimonials Section */
+.testimonials-section {
+    text-align: center;
+
+    .person-details {
+        // Remove unneeded pseudo-element defined in _features-section.scss
+        &::before {
+            display: none;
+        }
+    }
+
+    .person-name,
+    .person-title {
+        letter-spacing: 2px;
+    }
+
+    .person-name {
+        font-size: 1.4rem;
+    }
+
+    .person-title {
+        font-size: 1.2rem;
+    }
+    
+    .fa-circle {
+        color: #d8d8d8;
+
+        &-active {
+            color: $accent-color;
+        }
+    }
+}
+
+.client-avatars {
+    display: flex; // parent
+    justify-content: center;
+
+    margin-top: 30px;
+
+    li {
+        padding: 15px;
+    }
+}
+
+.client-quote {
+    padding: 0 15%;
+}
+
+.triangle-insignia {
+    @extend .insignia;
+    width: 31rem;
+
+    &::before,
+    &::after {
+        width: 12.25rem;
+    }
+
+    > img {
+        position: relative;
+        top: 6px;
+    }
+}
