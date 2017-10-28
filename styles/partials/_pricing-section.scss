@@ -1,0 +1,31 @@
+/* Pricing Section */
+.pricing-call-to-action {
+    @include crimson;
+    font: {
+        style: italic;
+    }
+    
+    letter-spacing: 0.2rem;
+
+    span {
+        @include montserrat;
+        color: $contrast-color;
+        font: {
+            size: 1.8rem;
+            style: normal;
+            weight: 700;
+        }
+        text-transform: uppercase;
+
+        &:first-child {
+            padding-right: 0.75rem;
+        }
+        &:last-child {
+            padding-left: 0.75rem;
+        }
+    }
+}
+
+.pricing-section {
+    text-align: center;
+}
