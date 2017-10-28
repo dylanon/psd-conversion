@@ -1,0 +1,46 @@
+/* Team Section */
+.team {
+    display: flex; // parent
+    justify-content: space-between;
+
+    li { 
+        position: relative;
+    }
+
+    .person-details {
+        position: absolute;
+        bottom: 0;
+
+        width: 100%;
+        padding: 1.9rem 2.2rem;
+
+        border-top: 2px solid #ededed;
+
+        color: #ffffff;
+        font: {
+            size: 1.4rem;
+        }
+
+        p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        // Remove pseudo-element defined in _features-section.scss
+        &::before {
+            display: none;
+        }
+    }
+
+    .person-name {
+        letter-spacing: 0.25rem;
+    }
+
+    .person-title {
+        letter-spacing: 0.2rem;
+        font: {
+            size: 1.2rem;
+        }
+    }
+
+}
