@@ -28,4 +28,82 @@
 
 .pricing-section {
     text-align: center;
+
+    h3 {
+        font-size: 1.4rem;
+        margin: 0;
+        padding: 2.7rem 0;
+        border-bottom: 1px solid #ededed;
+    }
+}
+
+.pricing-panels {
+    display: flex; // parent
+    justify-content: space-between;
+
+    > li {
+        width: 23%;
+        border: 1px solid #ededed;
+    }
+}
+
+.plan-features {
+    padding: 3rem 3rem 0 3rem;
+    font-size: 1.2rem;
+
+    li {
+        margin-bottom: 3rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .fa {
+        color: $accent-color;
+    }
+}
+
+.plan-price {
+    color: $contrast-color;
+    margin: 0;
+    line-height: 1;
+    padding: 6rem 0;
+
+    display: flex; // parent
+    justify-content: center;
+}
+
+.plan-currency {
+    font: {
+        size: 1.8rem;
+    }
+
+    align-self: flex-start; // child
+}
+.plan-price-value {
+    font: {
+        size: 5rem;
+    }
+    padding: 0 1rem;
+
+    align-self: center; // child
+}
+.plan-frequency {
+    @include crimson;
+    letter-spacing: 0.1rem;
+    font: {
+        style: italic;
+    }
+    align-self: flex-end; // child
+    position: relative;
+    top: -0.5rem;
+}
+
+.pricing-button {
+    @extend .button;
+    // display: none;
+    color: #ffffff;
+    background: $contrast-color;
+    padding: (1.5rem / $font-size * 1em) (4.5rem / $font-size * 1em);
+    transform: translateY(50%);
 }
