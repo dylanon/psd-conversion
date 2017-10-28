@@ -1,5 +1,9 @@
 /* Features Section */
 
+.features-section {
+    padding-bottom: $home-section-padding;
+}
+
 .features-intro {
     display: flex; // parent
     justify-content: space-between;

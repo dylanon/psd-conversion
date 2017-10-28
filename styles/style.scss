@@ -19,6 +19,9 @@ $nav-item-padding: 60px;
 // Header
 $slider-control-indent: 60px;
 
+// Home Sections
+$home-section-padding: 120px;
+
 // Intro Page
 $intro-icon-size: 2.8rem;
 
@@ -35,3 +38,4 @@ $footer-bg: #202020;
 @import "partials/intro-section";
 @import "partials/gallery-section";
 @import "partials/features-section";
+@import "partials/counter-section";
