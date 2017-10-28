@@ -3,6 +3,8 @@
     display: flex; // parent
     justify-content: space-between;
 
+    margin-top: $home-section-padding;
+
     li { 
         position: relative;
     }
@@ -43,4 +45,14 @@
         }
     }
 
+}
+
+.team-call-to-action {
+    display: flex; // parent
+    justify-content: space-between;
+    align-items: center;
+}
+
+.team-call-text {
+    flex: 0 1 66.66%;
 }
