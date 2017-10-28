@@ -14,3 +14,8 @@
     height: $lineHeight;
     width: $lineWidth;
 }
+
+@mixin object-fit($fitType) {
+    -o-object-fit: $fitType;
+    object-fit: $fitType;
+}
