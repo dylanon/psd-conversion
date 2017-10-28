@@ -1,0 +1,67 @@
+/* Blog Section */
+.blog-section {
+
+    h4 {
+        font: {
+            size: 2.4rem;
+            weight: 400;
+        }
+        text-transform: initial;
+        margin: 1.5rem 0;
+    }
+}
+
+.blog {
+    @extend .gallery; // flex parent
+    margin-top: $home-section-padding;
+    margin-bottom: 0;
+
+    // Set article width to half the page
+    li {
+        flex: 1 0 50%; // child
+    }
+
+    // Swap visual order of img with .post-preview for every 3rd and 4th post
+    li:nth-child(3n) img,
+    li:nth-child(4n) img {
+        order: 1;
+    }
+
+    article {
+        display: flex; // parent
+
+        img,
+        .post-preview {
+            width: 50%;
+        }
+
+        img {
+            @include object-fit(cover);
+        }
+    }
+
+}
+
+.post-preview {
+    background: $post-preview-bg;
+    padding: 2rem 3rem;
+
+    display: flex; // parent
+    flex-direction: column;
+
+    .subheading {
+        color: $contrast-color;
+        margin: 0;
+    }
+    
+    .read-more {
+        color: $contrast-color;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        margin-top: auto; // flex child - push to bottom of flex container
+    
+        .fa {
+            margin-left: 1.4rem;
+        }
+    }
+}

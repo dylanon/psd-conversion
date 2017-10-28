@@ -5,6 +5,7 @@ $site-width: 1170px;
 $bg: #ffffff;
 $counter-bg: #2f2f2f;
 $call-to-action-bg: #323232;
+$post-preview-bg: #eaeaea;
 
 $accent-color: #eeb013;
 $contrast-color: #141414;
@@ -42,3 +43,4 @@ $footer-bg: #202020;
 @import "partials/team-section";
 @import "partials/testimonials-section";
 @import "partials/call-to-action-section";
+@import "partials/blog-section";
