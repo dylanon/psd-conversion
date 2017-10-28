@@ -1,6 +1,7 @@
 /* Testimonials Section */
 .testimonials-section {
     text-align: center;
+    padding-bottom: $home-section-padding;
 
     .person-details {
         // Remove unneeded pseudo-element defined in _features-section.scss
