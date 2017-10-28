@@ -1,5 +1,7 @@
 /* Pricing Section */
 .pricing-call-to-action {
+    margin: ($home-section-padding / 2) 0;
+
     @include crimson;
     font: {
         style: italic;
@@ -27,6 +29,7 @@
 }
 
 .pricing-section {
+    padding-bottom: $home-section-padding;
     text-align: center;
 
     h3 {
