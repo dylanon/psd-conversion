@@ -27,9 +27,11 @@
     display: flex; // parent
 }
 
+// Footer Main
+
 .footer-main {
     > div {
-        padding: 0 20px;
+        padding: 0 30px 0 20px;
         &:first-child {
             padding-left: 0;
             padding-right: 60px;
@@ -87,6 +89,20 @@
 .footer-instagram {
     width: 24%;
 }
+
+.twitter-widget {
+    font-size: 1.1rem;
+}
+
+.tweet {
+    margin-bottom: 2rem;
+}
+
+.tweet-meta {
+    color: $font-color-copyright;
+}
+
+// Footer Bottom
 
 .footer-bottom {
     justify-content: space-between;
