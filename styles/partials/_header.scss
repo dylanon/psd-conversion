@@ -6,11 +6,17 @@ header.page-header {
     padding-top: 50px;
     position: relative;
     
+    // Make wrapper full height
+    .wrapper {
+        height: 100vh;
+    }
+
     a {
         color: #ffffff;
         text-decoration: none;
     }
     
+    // Top-level layout and styling for site logo and nav block
     nav { // Flex parent
         display: flex;
         justify-content: space-between;
@@ -20,8 +26,26 @@ header.page-header {
             text-transform: uppercase;
         }
         
+        li {
+            display: inline;
+            padding-left: $nav-item-padding;
+        }
+
         .fa {
             font-size: 1.2rem;
+        }
+    }
+
+    // Spacing for both nav sections
+    .main-nav .fa {
+        padding-left: 1.9rem;
+    }
+
+    .secondary-nav li {
+        padding-left: 75px;
+
+        &:last-child {
+            padding-left: $nav-item-padding / 2;
         }
     }
 
@@ -40,37 +64,14 @@ header.page-header {
             opacity: 1;
         }
     }
-
-    // Could be used to bump nav links up like in PSD
-    // .navs {
-    //     position: relative;
-    //     top: -10px;
-    // }
     
-    ul {
-        display: inline;
-        // border: 1px solid tomato;
-    }
+    // Lay out .main-nav and .secondary-nav
+    .navs { // ul
+        display: flex; // parent
 
-    li {
-        display: inline;
-        padding-left: $nav-item-padding;
-    }
-
-    .main-nav .fa {
-        padding-left: 1.9rem;
-    }
-
-    .secondary-nav li {
-        padding-left: 75px;
-
-        &:last-child {
-            padding-left: $nav-item-padding / 2;
-        }
-    }
-
-    .wrapper {
-        height: 100vh;
+        // @media (max-width: 1059px) {
+        //     flex-direction: column;
+        // }
     }
 
     .slider-content {
