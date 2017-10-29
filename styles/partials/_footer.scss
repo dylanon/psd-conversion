@@ -102,6 +102,36 @@
     color: $font-color-copyright;
 }
 
+.instagram-widget {
+    display: flex; // parent
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    li {
+        display: flex; // parent
+        background: #414141;
+        height: 70px;
+        width: 70px;
+        margin-bottom: 25px;
+
+        font-size: 1.8rem;
+        color: #ffffff;
+
+        .fa {
+            margin: auto; // child
+            display: none;
+        }
+
+        &:hover {
+            background: $accent-color;
+
+            .fa {
+                display: block;
+            }
+        }
+    }
+}
+
 // Footer Bottom
 
 .footer-bottom {
