@@ -3,7 +3,6 @@ header.page-header {
     background: url(../assets/northern-lights.jpg) center/cover no-repeat;
     height: 100vh;
     color: #ffffff;
-    padding-top: 50px;
     position: relative;
     
     // Make wrapper full height
@@ -15,118 +14,156 @@ header.page-header {
         color: #ffffff;
         text-decoration: none;
     }
+}
+
+// Top-level layout and styling for site logo and nav block
+.navbar {
+    display: flex; // Flex parent
+    justify-content: space-between;
+    align-items: center;
+
+    // Offset from top of page
+    padding-top: 50px;
+
+    a {
+        text-transform: uppercase;
+    }
     
-    // Top-level layout and styling for site logo and nav block
-    nav { // Flex parent
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    li {
+        display: inline;
+    }
 
-        a {
-            text-transform: uppercase;
-        }
+    .fa {
+        font-size: 1.2rem;
+    }
+
+    // Stack logo and main nav
+    @media (max-width: 752px) {
+        flex-direction: column;
+    }
+}
+
+// Lay out .main-nav and .secondary-nav side-by-side
+.navs {
+    display: flex; // parent
+}
+
+// Spacing
+.main-nav {
+
+    .nav-item {
+        padding-left: $nav-item-padding;
         
-        li {
-            display: inline;
-            padding-left: $nav-item-padding;
+        // Remove padding from first nav item
+        &:first-child {
+            padding: 0;
         }
 
-        .fa {
+        @media (max-width: 544px) {
             font-size: 1.2rem;
+            padding-left: $nav-item-padding / 3;
         }
-    }
-
-    // Spacing for both nav sections
-    .main-nav .fa {
-        padding-left: 1.9rem;
-    }
-
-    .secondary-nav li {
-        padding-left: 75px;
-
-        &:last-child {
+    
+        @media (min-width: 545px) and (max-width: 910px) {
             padding-left: $nav-item-padding / 2;
         }
     }
 
-    // Add hidden pseudo-elements below navigation links
-    .navs a {
-        position: relative;
-        &::after {
-            @include pseudo-line($accent-color, 2px, 100%);
-            position: absolute;
-            left: 0;
-            bottom: -2.5rem;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
-        &:hover::after {
-            opacity: 1;
-        }
+    .fa {
+        padding-left: 1.9rem;
     }
+
+    @media (max-width: 910px) {
+        margin: 3rem 0;
+    }
+}
+
+// Spacing
+.secondary-nav {
+
+    .nav-item {
+    padding-left: 75px;
     
-    // Lay out .main-nav and .secondary-nav
-    .navs { // ul
-        display: flex; // parent
-
-        // @media (max-width: 1059px) {
-        //     flex-direction: column;
-        // }
-    }
-
-    .slider-content {
-        position: absolute;
-        text-align: center;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%,-50%);
-    }
-
-    .slider-title {
-        font-size: 14rem;
-        font-weight: 700;
-        margin: 0;
-        line-height: 0.9;
-
-        span {
-            font-size: 9rem;
+        &:last-child {
+            padding-left: 30px;
         }
     }
 
-    .slider-tagline,
-    .circle-button {
-        @include crimson;
-        font-size: 1.8rem;
-        font-style: italic;
-    }
-
-    .circle-button {
-        height: 8.3rem;
-        width: 8.3rem;
-        margin-top: 20px;
-        border: 2px solid #ffffff;
-        border-radius: 50%;
-        display: inline-flex; // parent
-
-        span {
-            margin: auto; // child
-        }
-    }
-
-    .slider-control {
+    @media (max-width: 1059px) {
         position: absolute;
-        border: 2px solid rgba(255, 255, 255, 0.5);
-        padding: 1.55rem 1.95rem;
+        top: 0;
+        right: 0;
+        padding: ($site-padding/2) $site-padding 0 0; 
     }
+}
 
-    .slider-control-left {
-        top: 50%;
-        left: $slider-control-indent;
+// Add hidden pseudo-elements below navigation links
+.navs a {
+    position: relative;
+    &::after {
+        @include pseudo-line($accent-color, 2px, 100%);
+        position: absolute;
+        left: 0;
+        bottom: -2.5rem;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
     }
-
-    .slider-control-right {
-        top: 50%;
-        right: $slider-control-indent;
+    &:hover::after {
+        opacity: 1;
     }
+}
 
+.slider-content {
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.slider-title {
+    font-size: 14rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 0.9;
+
+    span {
+        font-size: 9rem;
+    }
+}
+
+.slider-tagline,
+.circle-button {
+    @include crimson;
+    font-size: 1.8rem;
+    font-style: italic;
+}
+
+.circle-button {
+    height: 8.3rem;
+    width: 8.3rem;
+    margin-top: 20px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    display: inline-flex; // parent
+
+    span {
+        margin: auto; // child
+    }
+}
+
+.slider-control {
+    position: absolute;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 1.55rem 1.95rem;
+}
+
+.slider-control-left {
+    top: 50%;
+    left: $slider-control-indent;
+}
+
+.slider-control-right {
+    top: 50%;
+    right: $slider-control-indent;
 }
