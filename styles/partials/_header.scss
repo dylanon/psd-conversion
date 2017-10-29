@@ -26,6 +26,22 @@ header.page-header {
         }
     }
 
+    // Add hidden pseudo-elements below navigation links
+    .navs a {
+        position: relative;
+        &::after {
+            @include pseudo-line($accent-color, 2px, 100%);
+            position: absolute;
+            left: 0;
+            bottom: -2.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        &:hover::after {
+            opacity: 1;
+        }
+    }
+
     // Could be used to bump nav links up like in PSD
     // .navs {
     //     position: relative;
