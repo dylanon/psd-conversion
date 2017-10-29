@@ -64,6 +64,16 @@ ul {
     border: 1px solid $contrast-color;
     // Convert padding to ems so it depends on button font size
     padding: (2.1rem / $font-size * 1em) (3.2rem / $font-size * 1em);
+    transition: 
+        color 0.3s ease, 
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+
+    &:hover {
+        color: #ffffff;
+        background: $accent-color;
+        border-color: lighten($contrast-color, 75%);
+    }
 }
 
 // Apply to an element to make it a flex parent
