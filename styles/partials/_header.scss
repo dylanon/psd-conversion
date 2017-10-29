@@ -84,6 +84,19 @@ header.page-header {
         font-style: italic;
     }
 
+    .circle-button {
+        height: 8.3rem;
+        width: 8.3rem;
+        margin-top: 20px;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+        display: inline-flex; // parent
+
+        span {
+            margin: auto; // child
+        }
+    }
+
     .slider-control {
         position: absolute;
         border: 2px solid rgba(255, 255, 255, 0.5);
