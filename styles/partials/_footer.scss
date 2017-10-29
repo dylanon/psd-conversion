@@ -2,7 +2,7 @@
 .footer {
     background: $footer-bg;
     color: $font-color-footer;
-    padding-top: $home-section-padding / 3;
+    padding-top: $home-section-padding / 2;
 
     h5 {
         color: #ffffff;
@@ -11,6 +11,7 @@
             size: 1.2rem;
             weight: 400;
         }
+        margin-top: 0;
     }
 
     a {
@@ -26,10 +27,35 @@
     display: flex; // parent
 }
 
+.footer-main {
+    > div {
+        padding: 0 20px;
+        &:first-child {
+            padding-left: 0;
+            padding-right: 60px;
+        }
+        &:last-child {
+            padding-right: 0;
+        }
+
+        // Dividers
+        position: relative;
+        &::before {
+            @include pseudo-line(#2e2e2e, 100%, 1px);
+            position: absolute;
+            left: -10px;
+        }
+        // Hide divider on first div in footer
+        &:first-child::before {
+            display: none;
+        }
+    }
+}
+
 .footer-about {
-    width: 35%;
+    width: 38%;
     font-size: 1.2rem;
-    padding-right: 3rem;
+
 
     h5 {
         color: $accent-color;
@@ -42,8 +68,7 @@
 }
 
 .footer-links {
-    width: 15%;
-    padding: 0 1rem;
+    width: 16%;
 
     a {
         font-size: 1rem;
@@ -56,11 +81,11 @@
 }
 
 .footer-twitter {
-    width: 25%;
+    width: 22%;
 }
 
 .footer-instagram {
-    width: 25%;
+    width: 24%;
 }
 
 .footer-bottom {
@@ -69,6 +94,8 @@
 
     color: $font-color-copyright;
     text-transform: uppercase;
+    
+    margin-top: 60px;
 
     a {
         color: $font-color-copyright;
