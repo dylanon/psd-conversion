@@ -6,13 +6,21 @@
 
     ul {
         display: flex; // parent
+        flex-flow: row wrap;
         justify-content: center;
+        margin: 0;
+
+        @media (max-width: 480px) {
+            display: flex;
+            flex-flow: column nowrap;
+            text-align: center;
+        }
     }
 
     li {
         @extend .button;
         font-size: 1rem;
-        margin: 0 10px;
+        margin: 10px;
 
         // Remove extra letter spacing for a single character item
         &:last-child {
@@ -27,7 +35,19 @@
     flex-flow: row wrap;
 
     li {
-        flex: 1 0 25%;
+        width: 25%;
+
+        @media (max-width: 768px) {
+            width: 33.33%;
+        }
+
+        @media (max-width: 700px) {
+            width: 50%;
+        }
+
+        @media (max-width: 480px) {
+            width: 100%;
+        }
     }
 
     img {
