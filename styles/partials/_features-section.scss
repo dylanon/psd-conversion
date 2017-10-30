@@ -7,9 +7,32 @@
 .features-intro {
     display: flex; // parent
     justify-content: space-between;
+    align-items: flex-start; // prevent image distortion from default stretch
 
     .features-intro-text {
         width: 55%;
+    }
+
+    @media (max-width: 708px) {
+        align-items: center;
+        img {
+            width: 40%;
+        }
+        .features-intro-text {
+            width: 60%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        flex-direction: column;
+        img {
+            width: 100%;
+            margin-top: 30px;
+        }
+        .features-intro-text {
+            order: 1;
+            width: 100%;
+        }
     }
 }
 
