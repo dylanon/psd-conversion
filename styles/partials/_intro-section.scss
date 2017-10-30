@@ -8,12 +8,27 @@
 
     .wrapper {
         display: flex; // parent
+        align-items: flex-start; // prevent default vertical stretching
     }
     
 }
 
+.intro-content {
+    @media (max-width: 480px) {
+        text-align: center;
+    }
+}
+
 .logo-sideways {
     margin: 0 128px;
+
+    @media (max-width: 1100px) {
+        margin: 0 64px 0 0;
+    }
+
+    @media (max-width: 730px) {
+        display: none;
+    }
 }
 
 .circled-icon {
@@ -28,9 +43,10 @@
 .services {
     color: $contrast-color;
     text-transform: uppercase;
-    margin: 50px 0;
+    margin: 40px 0;
     
     display: flex; // parent
+    flex-flow: row wrap;
     justify-content: space-between;
 
     .fa {
@@ -38,14 +54,20 @@
     }
 
     li {
-        flex: 1 0 auto; // child
+        margin: 1rem 0;
 
         display: flex; // parent
         align-items: center;
+
+        p {
+            margin: 0 2rem;
+        }
     }
 
-    li p {
-        margin: 0 auto;
+    @media (max-width: 480px) {
+        flex-direction: column;
+        display: inline-flex;
+        margin: 20px auto 40px auto;
     }
 
 }
