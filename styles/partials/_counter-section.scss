@@ -1,11 +1,12 @@
 /* Counter Section */
 .counter-section {
     background: $counter-bg;
-    padding: ($home-section-padding - 34px) 0;
+    padding: ($home-section-padding - 77px) 0;
 }
 
 .counter {
     display: flex; // parent
+    flex-flow: row wrap;
     justify-content: space-around;
 
     text-align: center;
@@ -15,9 +16,21 @@
 
     margin: 0;
 
-    li::after {
-        @include pseudo-line(#909090, 0.3rem, 5.3rem);
-        margin: auto auto;
+    li {
+        margin: 43px 0;
+
+        &::after {
+            @include pseudo-line(#909090, 0.3rem, 5.3rem);
+            margin: auto auto;
+        }
+
+        @media (max-width: 768px) {
+            width: 50%;
+        }
+    
+        @media (max-width: 400px) {
+            width: 100%;
+        }
     }
     
 }
