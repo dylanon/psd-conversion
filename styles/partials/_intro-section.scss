@@ -2,46 +2,46 @@
 
 .intro-section {
 
-    .logo-sideways {
-        margin: 0 128px;
-    }
-
     .subheading {
         margin-top: 0;
     }
+    
+}
 
-    .circled-icon {
-        font-size: $intro-icon-size;
-        height: 6.9rem / 2.8rem * 1em; // Scale circle height if icon size changes
-        width: 6.9rem / 2.8rem * 1em; // Scale circle width if icon size changes
-        border: 2px solid $border-color;
-        border-radius: 50%;
-        display: flex; // parent
+.logo-sideways {
+    margin: 0 128px;
+}
+
+.circled-icon {
+    font-size: $intro-icon-size;
+    height: 6.9rem / 2.8rem * 1em; // Scale circle height if icon size changes
+    width: 6.9rem / 2.8rem * 1em; // Scale circle width if icon size changes
+    border: 2px solid $border-color;
+    border-radius: 50%;
+    display: flex; // parent
+}
+
+.services {
+    color: $contrast-color;
+    text-transform: uppercase;
+    margin: 50px 0;
+    
+    display: flex; // parent
+    justify-content: space-between;
+
+    .fa {
+        margin: auto;
     }
 
-    .services {
-        color: $contrast-color;
-        text-transform: uppercase;
-        margin: 50px 0;
-        
+    li {
+        flex: 1 0 auto; // child
+
         display: flex; // parent
-        justify-content: space-between;
+        align-items: center;
+    }
 
-        .fa {
-            margin: auto;
-        }
-
-        li {
-            flex: 1 0 auto; // child
-
-            display: flex; // parent
-            align-items: center;
-        }
-
-        li p {
-            margin: 0 auto;
-        }
-
+    li p {
+        margin: 0 auto;
     }
 
 }
