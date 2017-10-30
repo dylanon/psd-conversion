@@ -25,6 +25,10 @@ header.page-header {
     // Offset from top of page
     padding-top: 50px;
 
+    @media (max-width: 480px) {
+        padding-top: 25px;
+    }
+
     a {
         text-transform: uppercase;
     }
@@ -43,12 +47,24 @@ header.page-header {
     }
 }
 
+.logo {
+    @media (max-width: 480px) {
+        align-self: flex-start;
+        width: 100px;
+    }
+}
+
 // Lay out .main-nav and .secondary-nav side-by-side
 .navs {
     display: flex; // parent
+
+    @media (max-width: 480px) {
+        flex-direction: column;
+        text-align: center;
+        // display: none;
+    }
 }
 
-// Spacing
 .main-nav {
 
     .nav-item {
@@ -58,14 +74,21 @@ header.page-header {
         &:first-child {
             padding: 0;
         }
+    
+        @media (max-width: 910px) {
+            padding-left: $nav-item-padding / 2;
+        }
 
         @media (max-width: 544px) {
             font-size: 1.2rem;
             padding-left: $nav-item-padding / 3;
         }
-    
-        @media (min-width: 545px) and (max-width: 910px) {
-            padding-left: $nav-item-padding / 2;
+
+        @media (max-width: 480px) {
+            display: block;
+            padding-left: 0;
+            margin: 1.6rem 0;
+            font-size: $font-size;
         }
     }
 
@@ -76,13 +99,16 @@ header.page-header {
     @media (max-width: 910px) {
         margin: 3rem 0;
     }
+
+    @media (max-width: 480px) {
+        margin: 0;
+    }
 }
 
-// Spacing
 .secondary-nav {
 
     .nav-item {
-    padding-left: 75px;
+        padding-left: 75px;
     
         &:last-child {
             padding-left: 30px;
@@ -94,6 +120,16 @@ header.page-header {
         top: 0;
         right: 0;
         padding: ($site-padding/2) $site-padding 0 0; 
+    }
+
+    @media (max-width: 480px) {
+        position: relative;
+        padding: 0;
+        margin: 0;
+
+        .nav-item {
+            padding: 0;
+        }
     }
 }
 
