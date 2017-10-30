@@ -5,10 +5,6 @@
 
     margin-top: $home-section-padding;
 
-    li { 
-        position: relative;
-    }
-
     .person-details {
         position: absolute;
         bottom: 0;
@@ -45,6 +41,10 @@
         }
     }
 
+}
+
+.team-member { 
+    position: relative;
 }
 
 .team-call-to-action {
