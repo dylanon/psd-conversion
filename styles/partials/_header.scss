@@ -45,6 +45,35 @@ header.page-header {
     @media (max-width: 752px) {
         flex-direction: column;
     }
+
+    @media (max-width: 480px) {
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+}
+
+// Mobile nav toggle
+
+.nav-toggle {
+    .fa {
+        font-size: 1.8rem;
+    }
+    
+    // Hide by default
+    display: none;
+
+    // Show on mobile
+    @media (max-width: 480px) {
+        display: flex;
+    }
+}
+
+input#toggle {
+    display: none; // This checkbox stores the state, but is not displayed
+}
+
+input#toggle:checked + .navs { // When checked, show adjacent element with class .navs
+    display: flex;
 }
 
 .logo {
@@ -61,7 +90,8 @@ header.page-header {
     @media (max-width: 480px) {
         flex-direction: column;
         text-align: center;
-        // display: none;
+        width: 100%;
+        display: none;
     }
 }
 
