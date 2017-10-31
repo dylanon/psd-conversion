@@ -72,7 +72,8 @@
         transition: filter 0.3s ease;
     }
 
-    &:hover {
+    &:hover,
+    a:focus {
         .gallery-caption {
             opacity: 1;
         }

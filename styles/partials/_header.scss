@@ -94,6 +94,25 @@ input#toggle:checked + .navs { // When checked, show adjacent element with class
 .navs {
     display: flex; // parent
 
+    // Add hidden pseudo-elements below navigation links
+    a {
+        position: relative;
+        &::after {
+            @include pseudo-line($accent-color, 2px, 100%);
+            position: absolute;
+            left: 0;
+            bottom: -2.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        &:hover,
+        &:focus {
+            &::after {
+            opacity: 1;
+            }
+        }
+    }
+
     @media (max-width: 480px) {
         flex-direction: column;
         text-align: center;
@@ -182,22 +201,6 @@ input#toggle:checked + .navs { // When checked, show adjacent element with class
     }
 }
 
-// Add hidden pseudo-elements below navigation links
-.navs a {
-    position: relative;
-    &::after {
-        @include pseudo-line($accent-color, 2px, 100%);
-        position: absolute;
-        left: 0;
-        bottom: -2.5rem;
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out;
-    }
-    &:hover::after {
-        opacity: 1;
-    }
-}
-
 .slider-content {
     text-align: center;
     position: absolute;
@@ -256,7 +259,8 @@ input#toggle:checked + .navs { // When checked, show adjacent element with class
         margin: auto; // child
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
         background: #ffffff;
         color: $contrast-color;
     }

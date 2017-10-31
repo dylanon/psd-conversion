@@ -29,7 +29,9 @@
 
     a {
         color: $font-color-footer;
-        &:hover {
+        
+        &:hover,
+        &:focus {
             color: $accent-color;
         }
     }

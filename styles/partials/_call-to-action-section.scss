@@ -46,9 +46,9 @@
     padding-left: (3.7rem / $font-size * 1em);
     padding-right: (3.7rem / $font-size * 1em);
 
-    &:hover {
+    &:hover,
+    &:focus {
         background: #ffffff;
-        // border-color: $accent-color;
         color: $accent-color;
     }
 

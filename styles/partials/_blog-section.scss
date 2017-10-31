@@ -98,7 +98,8 @@
             margin-left: 1.4rem;
         }
 
-        &:hover {
+        &:hover,
+        &:focus {
             color: $accent-color;
         }
     }
