@@ -19,3 +19,8 @@
     -o-object-fit: $fitType;
     object-fit: $fitType;
 }
+
+@mixin filter($filters) {
+    -webkit-filter: $filters;
+    filter: $filters;
+}
