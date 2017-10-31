@@ -26,6 +26,13 @@
         &:last-child {
             letter-spacing: 0;
         }
+
+        &:hover {
+            background: transparent;
+            border-color: $accent-color;
+            color: $contrast-color;
+            cursor: pointer;
+        }
     }
 
 }
