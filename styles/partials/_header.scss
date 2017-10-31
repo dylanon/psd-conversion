@@ -248,6 +248,7 @@ input#toggle:checked + .navs { // When checked, show adjacent element with class
     height: 8.3rem;
     width: 8.3rem;
     margin-top: 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
     border: 2px solid #ffffff;
     border-radius: 50%;
     display: inline-flex; // parent
