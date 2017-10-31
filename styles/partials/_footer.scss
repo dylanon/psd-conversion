@@ -32,6 +32,7 @@
 .footer-main {
     > div {
         padding: 0 30px 0 20px;
+
         &:first-child {
             padding-left: 0;
             padding-right: 60px;
@@ -52,12 +53,23 @@
             display: none;
         }
     }
+
+    @media (max-width: 920px) {
+        flex-flow: row wrap;
+
+        > div {
+            padding-bottom: 40px;
+        }
+    }
 }
 
 .footer-about {
     width: 38%;
     font-size: 1.2rem;
 
+    @media (max-width: 920px) {
+        width: 70%;
+    }
 
     h5 {
         color: $accent-color;
@@ -67,10 +79,15 @@
         opacity: 0.15;
         margin-top: 1rem;
     }
+
 }
 
 .footer-links {
     width: 16%;
+
+    @media (max-width: 920px) {
+        width: 30%;
+    }
 
     a {
         font-size: 1rem;
@@ -84,10 +101,18 @@
 
 .footer-twitter {
     width: 22%;
+
+    @media (max-width: 920px) {
+        width: 70%;
+    }
 }
 
 .footer-instagram {
     width: 24%;
+
+    @media (max-width: 920px) {
+        width: 30%;
+    }
 }
 
 .twitter-widget {
@@ -146,10 +171,19 @@
     a {
         color: $font-color-copyright;
     }
+
+    @media (max-width: 675px) {
+        flex-direction: column;
+    }
 }
 
 .copyright {
     font-size: 1.1rem;
+
+    @media (max-width: 675px) {
+        order: 1;
+        text-align: center;
+    }
 }
 
 .social-icons {
@@ -162,4 +196,8 @@
     a {
         color: $font-color-social;
     }
+
+    @media (max-width: 675px) {
+        width: 70%;
+    }    
 }
