@@ -47,6 +47,18 @@
     > li {
         width: 23%;
         border: 1px solid #ededed;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            // Slide the pricing panel up
+            transform: translateY(-30px);
+
+            // Fade in and slide the button down
+            .pricing-button {
+                transform: translateY(50%);
+                opacity: 1;
+            } 
+        }
     }
 }
 
@@ -104,9 +116,11 @@
 
 .pricing-button {
     @extend .button;
-    // display: none;
+    opacity: 0;
     color: #ffffff;
     background: $contrast-color;
     padding: (1.5rem / $font-size * 1em) (4.5rem / $font-size * 1em);
-    transform: translateY(50%);
+    transition: 
+        opacity 0.3s ease-in-out,
+        transform 0.3s ease-in-out; // is transformed on `.pricing-panels > li:hover`
 }
