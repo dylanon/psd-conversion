@@ -12,6 +12,19 @@
             weight: 400;
         }
         margin-top: 0;
+
+        // Underline headings
+        &::after {
+            @include pseudo-line($accent-color, 0.3rem, 2rem);
+            position: relative;
+            top: 0.8rem;
+            margin-bottom: 2.5rem;
+
+            @media (max-width: 480px) {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
     }
 
     a {
@@ -69,6 +82,11 @@
 
     padding-left: 0;
     padding-right: 60px;
+
+    // Hide heading underline from view
+    h5::after {
+        background: transparent;
+    }
 
     // Hide divider
     &::before {
