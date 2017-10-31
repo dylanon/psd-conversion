@@ -152,6 +152,12 @@
         opacity 0.3s ease-in-out,
         transform 0.3s ease-in-out; // is transformed on `.pricing-panels > li:hover`
 
+    // Resize pricing buttons when 4 columns start getting tight
+    @media (min-width: 851px) and (max-width: 1015px) {
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+    }
+
     // Show pricing button by default on mobile
     @media (max-width: 480px) {
         opacity: 1;
