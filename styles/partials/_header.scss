@@ -16,7 +16,7 @@ header.page-header {
     }
 
     // Prevent crowding on small handheld devices in landscape mode
-    @media (orientation: landscape) and (max-width: 768px) {
+    @media (orientation: landscape) and (max-width: 698px) {
         height: 200vh;
     }
 }
