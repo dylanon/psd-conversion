@@ -16,16 +16,41 @@
     margin-top: $home-section-padding;
     margin-bottom: 0;
 
-    // Set article width to half the page
-    li {
-        flex: 1 0 50%; // child
+    @media (max-width: 1015px) {
+        flex-direction: column;
     }
 
-    // Swap visual order of img with .post-preview for every 3rd and 4th post
-    li:nth-child(3n) img,
-    li:nth-child(4n) img {
-        order: 1;
+    // Set article width to half the page
+    .post {
+        width: 50%;
+
+        // Swap visual order of img with .post-preview for every 3rd and 4th post
+        &:nth-child(3n) img,
+        &:nth-child(4n) img {
+            order: 1;
+        }
+
+        // Swap visual order of img with .post-preview for every 2nd post
+        @media (max-width: 1015px) {
+            width: 100%;
+
+            &:nth-child(2n) img {
+                order: 1;
+            }
+
+            &:nth-child(3n) img {
+                order: initial;
+            }
+        }
+
+        // Revert to source order on mobile
+        @media (max-width: 525px) {
+            &:nth-child(2n) img {
+                order: initial;
+            }
+        }
     }
+
 
     article {
         display: flex; // parent
@@ -38,8 +63,16 @@
         img {
             @include object-fit(cover);
         }
-    }
 
+        @media (max-width: 525px) {
+            flex-direction: column;
+
+            img,
+            .post-preview {
+                width: 100%;
+            }
+        }
+    }
 }
 
 .post-preview {
