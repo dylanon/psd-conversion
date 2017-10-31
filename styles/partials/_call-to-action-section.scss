@@ -46,6 +46,12 @@
     padding-left: (3.7rem / $font-size * 1em);
     padding-right: (3.7rem / $font-size * 1em);
 
+    &:hover {
+        background: #ffffff;
+        // border-color: $accent-color;
+        color: $accent-color;
+    }
+
     @media (max-width: 870px) {
         margin: 2rem 0;
     }
