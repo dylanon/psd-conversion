@@ -266,9 +266,15 @@ input#toggle:checked + .navs { // When checked, show adjacent element with class
 
     display: flex; // parent
 
+    transition: background-color 0.2s ease;
+
     // Center the icon
     .fa {
         margin: auto;
+    }
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.5);
     }
 
     @media (max-width: 752px) {
