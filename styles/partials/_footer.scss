@@ -22,72 +22,43 @@
     }
 }
 
-.footer-main,
-.footer-bottom {
-    display: flex; // parent
-}
-
 // Footer Main
 
 .footer-main {
-    > div {
-        padding: 0 30px 0 20px;
-
-        &:first-child {
-            padding-left: 0;
-            padding-right: 60px;
-        }
-        &:last-child {
-            padding-right: 0;
-        }
-
-        // Dividers
-        position: relative;
-        &::before {
-            @include pseudo-line(#2e2e2e, 100%, 1px);
-            position: absolute;
-            left: -10px;
-        }
-        // Hide divider on first div in footer
-        &:first-child::before {
-            display: none;
-        }
-    }
-
+    display: flex; // parent
+    
     @media (max-width: 920px) {
         flex-flow: row wrap;
-
-        > div {
-            padding-bottom: 40px;
-            &:first-child {
-                padding-right: 30px;
-            }
-
-            &:nth-child(3) {
-                padding-left: 0;
-            }
-
-            &:nth-child(3)::before {
-                display: none;
-            }
-        }
     }
-
+    
     @media (max-width: 480px) {
         flex-direction: column;
         text-align: center;
+    }
+}
 
-        > div {
-            padding-left: 0;
-            padding-right: 0;
+.footer-column {
+    padding: 0 30px 0 20px;
 
-            &:first-child {
-                padding-right: 0;
-            }
+    // Add dividers before each column
+    position: relative;
+    &::before {
+        @include pseudo-line(#2e2e2e, 100%, 1px);
+        position: absolute;
+        left: -10px;
+    }
 
-            &:nth-child(2n)::before {
-                display: none;
-            }
+    @media (max-width: 920px) {
+        padding-bottom: 40px;
+    }
+
+    @media (max-width: 480px) {
+        padding-left: 0;
+        padding-right: 0;
+
+        // Hide all dividers
+        &::before {
+            display: none;
         }
     }
 }
@@ -96,26 +67,45 @@
     width: 38%;
     font-size: 1.2rem;
 
+    padding-left: 0;
+    padding-right: 60px;
+
+    // Hide divider
+    &::before {
+        display: none;
+    }
+    
+    h5 {
+        color: $accent-color;
+    }
+    
+    .footer-logo {
+        opacity: 0.15;
+        margin-top: 1rem;
+    }
+
     @media (max-width: 920px) {
         width: 70%;
+        padding-right: 30px;
     }
 
     @media (max-width: 480px) {
         width: 100%;
-    }
-
-    h5 {
-        color: $accent-color;
-    }
-
-    .footer-logo {
-        opacity: 0.15;
-        margin-top: 1rem;
+        padding-right: 0;
     }
 }
 
 .footer-links {
     width: 16%;
+
+    a {
+        font-size: 1rem;
+        text-transform: uppercase;
+    }
+    
+    li {
+        margin-bottom: 1.5rem;
+    }
 
     @media (max-width: 920px) {
         width: 30%;
@@ -124,15 +114,6 @@
     @media (max-width: 480px) {
         width: 100%;
     }
-
-    a {
-        font-size: 1rem;
-        text-transform: uppercase;
-    }
-
-    li {
-        margin-bottom: 1.5rem;
-    }
 }
 
 .footer-twitter {
@@ -140,6 +121,12 @@
 
     @media (max-width: 920px) {
         width: 70%;
+        padding-left: 0;
+
+        // Hide divider
+        &::before {
+            display: none;
+        }
     }
 
     @media (max-width: 480px) {
@@ -149,6 +136,7 @@
 
 .footer-instagram {
     width: 24%;
+    padding-right: 0;
 
     @media (max-width: 920px) {
         width: 30%;
@@ -204,6 +192,7 @@
 // Footer Bottom
 
 .footer-bottom {
+    display: flex; // parent
     justify-content: space-between;
     align-items: center;
 
