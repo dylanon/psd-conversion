@@ -97,6 +97,10 @@
         .fa {
             margin-left: 1.4rem;
         }
+
+        &:hover {
+            color: $accent-color;
+        }
     }
 
     // Set up blog post triangles
