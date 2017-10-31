@@ -81,6 +81,16 @@
            @include filter(brightness(0.7));
         }
     }
+
+    // Show gallery image caption by default on mobile
+    @media (max-width: 480px) {
+        .gallery-caption {
+            opacity: 1;
+        }
+        img {
+            @include filter(brightness(0.7));
+        }
+    }
 }
 
 .gallery-caption {

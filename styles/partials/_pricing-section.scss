@@ -49,15 +49,18 @@
         border: 1px solid #ededed;
         transition: transform 0.3s ease;
 
-        &:hover {
-            // Slide the pricing panel up
-            transform: translateY(-30px);
-
-            // Fade in and slide the button down
-            .pricing-button {
-                transform: translateY(50%);
-                opacity: 1;
-            } 
+        // Don't animate pricing panels on mobie
+        @media (min-width: 481px) {
+            &:hover {
+                // Slide the pricing panel up
+                transform: translateY(-30px);
+    
+                // Fade in and slide the button down
+                .pricing-button {
+                    transform: translateY(50%);
+                    opacity: 1;
+                } 
+            }
         }
     }
 
@@ -148,4 +151,10 @@
         background-color 0.3s ease,
         opacity 0.3s ease-in-out,
         transform 0.3s ease-in-out; // is transformed on `.pricing-panels > li:hover`
+
+    // Show pricing button by default on mobile
+    @media (max-width: 480px) {
+        opacity: 1;
+        transform: translateY(50%);
+    }
 }
