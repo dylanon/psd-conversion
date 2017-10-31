@@ -55,6 +55,7 @@ header.page-header {
 // Mobile nav toggle
 
 .nav-toggle {
+    z-index: 20;
     .fa {
         font-size: 1.8rem;
     }
@@ -73,13 +74,14 @@ input#toggle {
 }
 
 input#toggle:checked + .navs { // When checked, show adjacent element with class .navs
-    display: flex;
+    top: 0;
 }
 
 .logo {
     @media (max-width: 480px) {
         align-self: flex-start;
         width: 100px;
+        z-index: 20;
     }
 }
 
@@ -91,7 +93,19 @@ input#toggle:checked + .navs { // When checked, show adjacent element with class
         flex-direction: column;
         text-align: center;
         width: 100%;
-        display: none;
+        padding: 60px 0 8rem 0;
+
+        background: linear-gradient(to bottom, 
+        rgba(0,0,0,0.9), 
+        rgba(0,0,0,0.8) 80%, 
+        rgba(0,0,0,0.2) 100%);
+        position: absolute;
+        top: -100%;
+        left: 0;
+        right: 0;
+        z-index: 10;
+
+        transition: top 0.7s ease-in-out;
     }
 }
 
