@@ -84,6 +84,7 @@
     font-size: 1.2rem;
 
     li {
+        position: relative; // positioning .fa icons absolutely
         margin-bottom: 3rem;
         &:last-child {
             margin-bottom: 0;
@@ -92,6 +93,12 @@
 
     .fa {
         color: $accent-color;
+        position: absolute;
+        right: 1%;
+
+        @media (min-width: 851px) and (max-width: 1100px) {
+            right: -10%;
+        }
     }
 }
 
