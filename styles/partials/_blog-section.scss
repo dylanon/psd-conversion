@@ -78,6 +78,7 @@
 .post-preview {
     background: $post-preview-bg;
     padding: 2rem 3rem;
+    position: relative; // positioning pseudo-elements absolutely
 
     display: flex; // parent
     flex-direction: column;
@@ -95,6 +96,85 @@
     
         .fa {
             margin-left: 1.4rem;
+        }
+    }
+
+    // Set up blog post triangles
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        height: 0;
+        width: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border-top: 25px solid transparent;
+        border-bottom: 25px solid transparent;
+    }
+
+    &::before {
+        border-left: 25px solid transparent;
+        border-right: 25px solid $post-preview-bg;
+        left: -50px;
+    }
+
+    &::after {
+        display: none;
+        border-left: 25px solid $post-preview-bg;
+        border-right: 25px solid transparent;
+        right: -50px;
+    }
+}
+
+// Show/hide blog post triangles
+.post {
+    &:nth-child(3n),
+    &:nth-child(4n) {
+        .post-preview::before {
+            display: none;
+        }
+        .post-preview::after {
+            display: block;
+        }
+    }
+
+    // Turn on/off arrows for alternating, single-line articles
+    @media (max-width: 1015px) {
+        &:nth-child(2n) {
+            .post-preview::before {
+                display: none;
+            }
+            .post-preview::after {
+                display: block;
+            }
+        }
+        &:nth-child(2n-1) {
+            .post-preview::before {
+                display: block;
+            }
+            .post-preview::after {
+                display: none;
+            }
+        }
+    }
+
+    // Turn off RIGHT arrows and repurpose LEFT arrow as UP arrow
+    @media (max-width: 525px) {
+        &:nth-child(1n) { // Override previous nth-child selectors
+            .post-preview::before {
+                display: block;
+                border-bottom: 25px solid $post-preview-bg;
+                border-top: 25px solid transparent;
+                border-left: 25px solid tranparent;
+                border-right: 25px solid transparent;
+                top: -50px;
+                left: 50%;
+                transform: translate(-50%, 0);
+            }
+            .post-preview::after {
+                display: none;
+            }
         }
     }
 }
