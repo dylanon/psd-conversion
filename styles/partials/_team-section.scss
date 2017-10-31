@@ -1,9 +1,46 @@
 /* Team Section */
+.team-member { 
+    position: relative;
+
+    width: 31.5%;
+
+    @media (max-width: 903px) {
+        width: 45%;
+
+        margin-bottom: 20px;
+
+        &:first-child {
+            margin-right: 5%;
+        }
+    }
+
+    @media (max-width: 644px) {
+        width: 60%;
+        &:first-child {
+            margin-right: 0;
+        }
+    }
+
+    @media (max-width: 480px) {
+        width: auto;
+    }
+}
+
 .team {
     display: flex; // parent
     justify-content: space-between;
 
     margin-top: $home-section-padding;
+
+    @media (max-width: 903px) {
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    @media (max-width: 644px) {
+        flex-direction: column;
+        align-items: center;
+    }
 
     .person-details {
         position: absolute;
@@ -43,16 +80,21 @@
 
 }
 
-.team-member { 
-    position: relative;
-}
-
 .team-call-to-action {
     display: flex; // parent
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 730px) {
+        flex-direction: column;
+    }
 }
 
 .team-call-text {
     flex: 0 1 66.66%;
+
+    @media (max-width: 730px) {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
 }
