@@ -144,7 +144,8 @@
     color: #ffffff;
     background: $contrast-color;
     padding: (1.5rem / $font-size * 1em) (4.5rem / $font-size * 1em);
-    transition: 
+    transition:
+        background-color 0.3s ease,
         opacity 0.3s ease-in-out,
         transform 0.3s ease-in-out; // is transformed on `.pricing-panels > li:hover`
 }
