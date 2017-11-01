@@ -189,10 +189,9 @@
         background: #414141;
         font-size: 1.8rem;
         color: #ffffff;
-
         margin-bottom: 15px;
-
         width: 30%;
+        transition: background-color 0.2s ease;
 
         // Make each li a square by setting bottom padding to 100% of the element's width
         // Idea by Bobby Kilpatrick: https://spin.atomicobject.com/2015/07/14/css-responsive-square/
@@ -204,14 +203,15 @@
 
         .fa {
             margin: auto; // child
-            display: none;
+            opacity: 0;
+            transition: opacity 0.2s ease;
         }
 
         &:hover {
             background: $accent-color;
 
             .fa {
-                display: block;
+                opacity: 1;
             }
         }
 
