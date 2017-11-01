@@ -107,11 +107,7 @@ ul {
 
     &::before,
     &::after {
-        content: "";
-        display: block;
-        height: 1px;
-        width: 8rem;
-        background: $border-color;
+        @include pseudo-line($border-color, 1px, 8rem);
         position: absolute;
         top: 50%;
     }
