@@ -36,12 +36,9 @@
     color: $contrast-color;
     margin-top: 3.5rem;
 
+    // Add an overline
     &::before {
-        content: "";
-        display: block;
-        height: 1px;
-        background: $contrast-color;
-        width: 6.1rem;
+        @include pseudo-line($contrast-color, 1px, 6.1rem);
         margin-bottom: 1rem;
     }
 }
