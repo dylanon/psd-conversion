@@ -19,8 +19,23 @@
     }
 }
 
+// Animation: Bob up and down
+@keyframes bob {
+    0% {
+        top: 0;
+    }
+    25% {
+        top: -8px;
+    }
+    100% {
+        top: 0;
+    }
+}
+
 .logo-sideways {
     margin: 0 128px;
+    position: relative;
+    animation: bob 2s ease infinite;
 
     @media (max-width: 1100px) {
         margin: 0 64px 0 0;
