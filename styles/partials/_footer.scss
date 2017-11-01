@@ -2,7 +2,7 @@
 .footer {
     background: $footer-bg;
     color: $font-color-footer;
-    padding-top: 60px;
+    padding-top: ($home-section-padding * 0.75);
 
     h5 {
         color: #ffffff;
