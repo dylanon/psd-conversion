@@ -33,6 +33,7 @@ $font-color-copyright: #3a3a3a;
 $font-color-social: #909090;
 $footer-bg: #202020;
 
+@import "partials/comments";
 @import "partials/setup";
 @import "partials/mixins";
 @import "partials/globals";
