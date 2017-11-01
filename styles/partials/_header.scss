@@ -1,5 +1,5 @@
 /* Header */
-header.page-header {
+.page-header {
     background: url(../assets/northern-lights.jpg) center/cover no-repeat;
     height: 100vh;
     color: #ffffff;
@@ -60,7 +60,6 @@ header.page-header {
 // Mobile nav toggle
 
 .nav-toggle {
-    z-index: 20;
     .fa {
         font-size: 1.8rem;
     }
@@ -72,13 +71,18 @@ header.page-header {
     @media (max-width: 480px) {
         display: flex;
     }
+
+    // Keep on top of mobile nav
+    z-index: 20;
 }
 
+// This checkbox stores the state, but is not displayed
 input#toggle {
-    display: none; // This checkbox stores the state, but is not displayed
+    display: none;
 }
 
-input#toggle:checked + .navs { // When checked, show adjacent element with class .navs
+// When checked, show adjacent element with class .navs
+input#toggle:checked + .navs {
     top: 0;
 }
 
@@ -86,6 +90,7 @@ input#toggle:checked + .navs { // When checked, show adjacent element with class
     @media (max-width: 480px) {
         align-self: flex-start;
         width: 100px;
+        // Keep on top of mobile nav
         z-index: 20;
     }
 }
@@ -97,6 +102,7 @@ input#toggle:checked + .navs { // When checked, show adjacent element with class
     // Add hidden pseudo-elements below navigation links
     a {
         position: relative;
+
         &::after {
             @include pseudo-line($accent-color, 2px, 100%);
             position: absolute;
@@ -105,10 +111,12 @@ input#toggle:checked + .navs { // When checked, show adjacent element with class
             opacity: 0;
             transition: opacity 0.3s ease-in-out;
 
+            // Adjust positioning for mobile
             @media (max-width: 480px) {
                 bottom: -6px;
             }
         }
+
         &:hover,
         &:focus {
             &::after {
@@ -117,12 +125,12 @@ input#toggle:checked + .navs { // When checked, show adjacent element with class
         }
     }
 
+    // Change stack primary and secondary navs on mobile, add a background, and position above the viewport
     @media (max-width: 480px) {
         flex-direction: column;
         text-align: center;
         width: 100%;
         padding: 60px 0 40px 0;
-
         background: linear-gradient(
             to bottom, 
             rgba(0,0,0,0.8), 
@@ -132,7 +140,6 @@ input#toggle:checked + .navs { // When checked, show adjacent element with class
         left: 0;
         right: 0;
         z-index: 10;
-
         transition: top 0.3s ease-in-out;
     }
 }
@@ -248,6 +255,7 @@ input#toggle:checked + .navs { // When checked, show adjacent element with class
     font-style: italic;
 }
 
+// This button is completely different than default .button - chose not to @extend
 .circle-button {
     height: 8.3rem;
     width: 8.3rem;
@@ -277,9 +285,7 @@ input#toggle:checked + .navs { // When checked, show adjacent element with class
     border: 2px solid rgba(255, 255, 255, 0.5);
     width: 5.3rem;
     height: 5.3rem;
-
     display: flex; // parent
-
     transition: background-color 0.2s ease;
 
     // Center the icon
