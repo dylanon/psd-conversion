@@ -103,82 +103,61 @@
             color: $accent-color;
         }
     }
-
-    // Set up blog post triangles
-    &::before,
-    &::after {
-        content: "";
-        display: block;
-        height: 0;
-        width: 0;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        border-top: 25px solid transparent;
-        border-bottom: 25px solid transparent;
-    }
-
-    &::before {
-        border-left: 25px solid transparent;
-        border-right: 25px solid $post-preview-bg;
-        left: -50px;
-    }
-
-    &::after {
-        display: none;
-        border-left: 25px solid $post-preview-bg;
-        border-right: 25px solid transparent;
-        right: -50px;
-    }
 }
 
-// Show/hide blog post triangles
 .post {
-    &:nth-child(3n),
-    &:nth-child(4n) {
-        .post-preview::before {
-            display: none;
-        }
-        .post-preview::after {
+    .post-preview {
+        // Set up blog post triangles (pointing left by default)
+        &::before {
+            content: "";
             display: block;
+            height: 0;
+            width: 0;
+            border-top: 25px solid transparent;
+            border-bottom: 25px solid transparent;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            @include blog-arrow-left;
         }
     }
 
-    // Turn on/off arrows for alternating, single-line articles
-    @media (max-width: 1015px) {
-        &:nth-child(2n) {
-            .post-preview::before {
-                display: none;
-            }
-            .post-preview::after {
-                display: block;
-            }
+    // Make 2nd row triangles point right
+    &:nth-child(3),
+    &:nth-child(4) {
+        .post-preview::before {
+            @include blog-arrow-right;
         }
+    }
+
+    // Re-arrange arrows for alternating, single-line articles
+    @media (max-width: 1015px) {
+        // Every second odd numbered post
         &:nth-child(2n-1) {
             .post-preview::before {
-                display: block;
+                @include blog-arrow-left;
             }
-            .post-preview::after {
-                display: none;
+        }
+        // Every second even numbered post
+        &:nth-child(2n) {
+            .post-preview::before {
+                @include blog-arrow-right;
             }
         }
     }
 
-    // Turn off RIGHT arrows and repurpose LEFT arrow as UP arrow
+    // Reposition arrows to top of post preview, pointing up at blog image
     @media (max-width: 525px) {
         &:nth-child(1n) { // Override previous nth-child selectors
             .post-preview::before {
-                display: block;
-                border-bottom: 25px solid $post-preview-bg;
                 border-top: 25px solid transparent;
-                border-left: 25px solid tranparent;
+                border-bottom: 25px solid $post-preview-bg;
+                border-left: 25px solid transparent;
                 border-right: 25px solid transparent;
-                top: -50px;
                 left: 50%;
+                right: initial;
+                top: -50px;
                 transform: translate(-50%, 0);
-            }
-            .post-preview::after {
-                display: none;
             }
         }
     }
