@@ -1,31 +1,35 @@
 // Variables
 
+// Wrapper sizing
 $site-width: 1170px;
 $site-padding: 20px;
 
+// Backgrounds
 $bg: #ffffff;
 $counter-bg: #2f2f2f;
 $call-to-action-bg: #323232;
 $post-preview-bg: #eaeaea;
 
+// Typographic Colors
 $accent-color: #eeb013;
 $contrast-color: #141414;
 $border-color: #d8d8d8;
 
-$font-size: 1.4rem;
+// Typographic Sizes
+$font-size: 1.4rem; // Default font size is 14px
 $font-color: #6f6f6f;
 
 // Nav
 $nav-item-padding: 60px;
 
-// Header
+// Hero Section
 $slider-control-indent: 60px;
+
+// Intro Section
+$intro-icon-size: 2.8rem;
 
 // Home Sections
 $home-section-padding: 80px;
-
-// Intro Page
-$intro-icon-size: 2.8rem;
 
 // Footer
 $font-color-footer: #636363;

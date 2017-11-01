@@ -1,4 +1,6 @@
 /* Globals */
+
+// Make root font size 10px - assumes browser default of 16px
 html {
     font-size: 10 / 16 * 100%;
 }
@@ -37,8 +39,9 @@ img {
     max-width: 100%;
 }
 
+// Set default line height to approx 30px high
 p {
-    line-height: (30 / 14); // PSD shows line height of approx 30px
+    line-height: (30 / 14);
 }
 
 blockquote {
@@ -62,7 +65,7 @@ ul {
     letter-spacing: 0.52rem;
     text-transform: uppercase;
     border: 1px solid $contrast-color;
-    // Convert padding to ems so it depends on button font size
+    // Convert padding to ems so it scales with button font size
     padding: (2.1rem / $font-size * 1em) (3.2rem / $font-size * 1em);
     transition: 
         color 0.3s ease, 
@@ -82,6 +85,7 @@ ul {
     display: flex;
 }
 
+// Style all section headers on home page
 .home-section {
     padding-top: $home-section-padding;
 
@@ -95,6 +99,7 @@ ul {
     }
 }
 
+// Add ornamental lines before and after the hammer insignia
 .insignia {
     margin: 25px auto 14px auto;
     position: relative;
@@ -124,6 +129,7 @@ ul {
     font-style: italic;
 }
 
+// Contain wrapped content on large displays
 .wrapper {
     max-width: $site-width;
     margin: 0 auto;
