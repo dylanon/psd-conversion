@@ -3,21 +3,20 @@
     margin: ($home-section-padding / 2) 0;
 
     @include crimson;
+    letter-spacing: 0.2rem;
     font: {
         style: italic;
     }
-    
-    letter-spacing: 0.2rem;
 
     span {
         @include montserrat;
         color: $contrast-color;
+        text-transform: uppercase;
         font: {
             size: 1.8rem;
             style: normal;
             weight: 700;
         }
-        text-transform: uppercase;
 
         &:first-child {
             padding-right: 0.75rem;
@@ -49,7 +48,7 @@
         border: 1px solid #ededed;
         transition: transform 0.3s ease;
 
-        // Don't animate pricing panels on mobie
+        // Don't animate pricing panels on mobile
         @media (min-width: 481px) {
             &:hover {
                 // Slide the pricing panel up
